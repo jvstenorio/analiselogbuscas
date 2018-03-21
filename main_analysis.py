@@ -39,22 +39,6 @@ def barPlot(x,y,title, ylabel, ax=None):
     plt.xticks(rotation=20)
 
 
-def getCityName(df,iataCode):
-    
-    mapAirport = df.groupby(['5','31']).size()
-    mapGroup = df.groupby(['33','31']).size()
-    cityName = iataCode
-    try:
-        cityName = mapAirport[iataCode].index.values[0]
-    except Exception as e:
-        pass
-    if cityName == iataCode:
-        try:
-            cityName = mapGroup[iataCode].index.values[0]
-        except Exception as e:
-            pass
-    return cityName
-
 
 def getTopAirportFrom(df):
     
